@@ -26,7 +26,7 @@
 ## 安装
 
 1.  **环境准备:** 确保您已正确安装并配置了 NoneBot2 和 OneBot V11 适配器（如 `nonebot-adapter-onebot`）。
-2.  **放置插件:** 将 `ai_chat` 文件夹整个放入您 NoneBot 项目配置的插件目录（通常是 `src/plugins`）。
+2.  **放置插件:** 将 `ai_chat` 文件夹整个放入您 NoneBot 项目配置的插件目录。
 3.  **安装依赖:** 在您的 NoneBot 项目虚拟环境中，确保安装了以下依赖库：
     ```bash
     pip install nonebot2 nonebot-adapter-onebot pyyaml aiosqlite httpx pydantic
@@ -34,6 +34,7 @@
     *   `nonebot2`, `nonebot-adapter-onebot`, `httpx`, `pydantic` 通常是 NoneBot 项目的基础依赖。
     *   `pyyaml` 用于解析配置文件。
     *   `aiosqlite` 用于异步操作 SQLite 数据库。
+4.修改pyproject.toml，添加ai_chat到plugins。
 
 ## 配置
 
@@ -74,8 +75,6 @@
 ## 故障排查
 
 *   **插件未加载/报错:**
-    *   检查 `__init__.py` 是否正确导入了所有模块。
-    *   检查 `config.py` 是否存在语法错误（理论上已修复）。
     *   检查 `data/AI_chat/config.yaml` 是否存在且格式正确，特别是 `api_key` 是否已填写。
     *   检查数据库文件 `data/AI_chat/database.db` 是否可读写（权限问题）。
 *   **AI 无响应:**
@@ -87,8 +86,6 @@
 *   **随机回复不触发:**
     *   检查 `config.yaml` 中的 `base_reply_probability` 是否大于 0。
     *   检查 `min_reply_interval` 设置的时间间隔是否已满足。
-*   **上下文不连贯:**
-    *   检查 `utils.py` 中的 `get_message_history` 函数是否能正常工作（见上一节“重要提示”）。检查相关日志。
 *   **印象不生成/更新:**
     *   印象生成只在 AI 成功回复后触发。
     *   检查日志中是否有印象生成相关的 AI API 调用错误。
