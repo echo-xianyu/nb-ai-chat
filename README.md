@@ -34,7 +34,8 @@
     *   `nonebot2`, `nonebot-adapter-onebot`, `httpx`, `pydantic` 通常是 NoneBot 项目的基础依赖。
     *   `pyyaml` 用于解析配置文件。
     *   `aiosqlite` 用于异步操作 SQLite 数据库。
-4.修改pyproject.toml，添加ai_chat到plugins。
+      
+4.  **修改配置:** 修改pyproject.toml，添加ai_chat到plugins。
 
 ## 配置
 
