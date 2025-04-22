@@ -1,7 +1,8 @@
 # NoneBot Plugin: AI Chat Assistant
 
 一个基于 NoneBot2 和 OneBot V11 标准的 QQ 群聊 AI 助手插件。
-大部分代码由AI生成，完全为了自用。
+完全为了自用。
+⚠️如果确定要使用，请确保你不会因为狗屎代码而血压升高。⚠️
 
 ## 功能特性
 
